@@ -52,13 +52,13 @@ export function updateeggcoords(eggnum) {
   for (let i = 1; i <= 3; i += 1) {
     console.log(
       "Egg " +
-        i +
-        " coordinates: " +
-        "(" +
-        eggs[i - 1].x +
-        ", " +
-        eggs[i - 1].y +
-        ")"
+      i +
+      " coordinates: " +
+      "(" +
+      eggs[i - 1].x +
+      ", " +
+      eggs[i - 1].y +
+      ")"
     );
   }
   console.log("===============================");

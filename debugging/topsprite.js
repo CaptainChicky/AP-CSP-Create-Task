@@ -57,10 +57,6 @@ import { updateeggcoords, eggs } from "./eggs.js";
     }
     drawDino();
 
-
-
-
-
     var score = 0;
 
     //somehow when you dont move the dino and the last egg lands on it
@@ -70,10 +66,18 @@ import { updateeggcoords, eggs } from "./eggs.js";
     //compeltely restart the construction of this and find a way to debug this
     function collect() {
       for (let i = 1; i <= 2; i += 1) {
-        if (intersects(dinox + 5,dinoy + 5,44 * 3 + 5,24 * 3 + 5,eggs[i - 1].x,
-          eggs[i - 1].y,10 * 3,14 * 3) == true
+        if (
+          intersects(
+            dinox + 5,
+            dinoy + 5,
+            44 * 3 + 5,
+            24 * 3 + 5,
+            eggs[i - 1].x,
+            eggs[i - 1].y,
+            10 * 3,
+            14 * 3
+          ) == true
         ) {
-
           clearInterval(eggint[i - 1]);
           ctx.clearRect(eggs[i - 1].x, eggs[i - 1].y, 10 * 3, 14 * 3);
           eggs.forEach((eggs) => {
@@ -108,7 +112,7 @@ import { updateeggcoords, eggs } from "./eggs.js";
         //clears egg if needed
         ctx.clearRect(eggs[2].x, eggs[2].y, 22 * 3, 28 * 3);
 
-                //sets the egg coords at a location out of reach
+        //sets the egg coords at a location out of reach
         //to not increase score indefinetely
         eggs.forEach((eggs) => {
           if (eggs.id == 3) {
@@ -123,14 +127,8 @@ import { updateeggcoords, eggs } from "./eggs.js";
         //increases score and logs it
         score = score + 50;
         console.log("score: " + score);
-
-
-
-
-
       }
     }
-
 
     //todo: make screen wrap better by having sprite show on other side
     //key controls for dino
@@ -174,7 +172,7 @@ import { updateeggcoords, eggs } from "./eggs.js";
         } else if (dinox > 799) {
           dinox = -44 * 3;
           ctx.clearRect(725, dinoy, 44 * 3, 24 * 3);
-         collect();
+          collect();
         }
 
         if (dinoy < -24 * 3) {
@@ -189,15 +187,6 @@ import { updateeggcoords, eggs } from "./eggs.js";
       },
       true
     );
-
-
-
-
-
-
-
-
-
 
     function makeEggBase(index) {
       const egg = new Image();
@@ -233,7 +222,36 @@ import { updateeggcoords, eggs } from "./eggs.js";
       eggint[i - 1] = setInterval(makeEggBase, 1000, i);
     }
 
+    //harded coded shitty fix for the stupid bug detailed in the collect();
+    function eggcheckint() {
+      if (score >= 100) {
+        eggs.forEach((eggs) => {
+          eggs["x"] = -69;
+          eggs["y"] = -69;
+        });
 
+        //still in if statememnt, this stop sthe game from using too much resoruces
+        //by checking if the score is greater or equal to 100 and then stopping the loop
+        clearInterval(cringe);
+
+        //after the loop is stopped, we will log the last coordinates, which should all be -69
+        console.log("===============================");
+        for (let i = 1; i <= 3; i += 1) {
+          console.log(
+            "Egg " +
+            i +
+            " coordinates: " +
+            "(" +
+            eggs[i - 1].x +
+            ", " +
+            eggs[i - 1].y +
+            ")"
+          );
+        }
+        console.log("===============================");
+      }
+    }
+    var cringe = setInterval(eggcheckint, 10);
   }
 
   //initialize function after html is completely loade
