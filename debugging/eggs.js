@@ -40,7 +40,14 @@ export { eggs };
 export function updateeggcoords(eggnum) {
   x = getRandomInt(800) - 15;
   y = getRandomInt(600) - 20;
-  
+
+  eggs.forEach((eggs) => {
+    if (eggs.id == eggnum) {
+      eggs["x"] = x;
+      eggs["y"] = y;
+    }
+  });
+
   console.log("===============================");
   for (let i = 1; i <= 3; i += 1) {
     console.log(
@@ -55,11 +62,4 @@ export function updateeggcoords(eggnum) {
     );
   }
   console.log("===============================");
-  
-  eggs.forEach((eggs) => {
-    if (eggs.id == eggnum) {
-      eggs["x"] = x;
-      eggs["y"] = y;
-    }
-  });
 }
