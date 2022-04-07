@@ -13,6 +13,10 @@
       padding: 10px;
     }
   </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+  
 </head>
 
 <body>
@@ -20,10 +24,24 @@
   <div class="center" style="position: center;">
     <canvas id="GaymeCanvaz" width="800" height="600" style="position: absolute; z-index: 0; background-color: transparent;"></canvas>
     <canvas id="cv2" width="800" height="600" style="position: absolute; z-index: 1; background-color: transparent;"></canvas>
+    <canvas id="go" width="800" height="600" style="position: absolute; z-index: -1; background-color: transparent;"></canvas>
   </div>
 
+  <div class="sidestats">
+    <span id="eggcoords">
+      test
+    </span>
+    <span id="mouseclickcoords">
+      test
+    </span>
+    <span id="score">
+      test
+    </span>
+  </div>
   <script type="module" src="background.js"></script>
-  <script type="module" src="topsprite.js"></script>
+ <script type="module" src="topsprite.js"></script>
+<script type="module"  src="timer.js"></script>
 </body>
+
 
 </html>
