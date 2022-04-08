@@ -1,7 +1,3 @@
-import { score, se } from './topsprite.js'
-console.log( se() );
-console.log( score );
-
 let canvas, ctx;
 canvas = document.getElementById("go");
 ctx = canvas.getContext("2d");
@@ -91,7 +87,7 @@ ctx = canvas.getContext("2d");
 //draw it
 
 
-function gameover() {
+export function gameover() {
   document.getElementById("go").style.zIndex = "2";
   
   const gorect = new DrawRectangle(0, 0, canvas.width, canvas.height, "black", "black", 0);
@@ -110,8 +106,4 @@ ctx.fillText('Game Over', canvas.width/2, 250)
 ctx.strokeText('Game Over', canvas.width/2, 250)
 
 ctx.restore()
-  console.log(score);
-
 }
-
- setTimeout(gameover, 100);

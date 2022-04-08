@@ -1,4 +1,5 @@
 import { updateeggcoords, eggs } from "./eggs.js";
+import { gameover } from './timer.js';
 
 (function () {
   //basic lib vars on initialization of html
@@ -62,9 +63,8 @@ import { updateeggcoords, eggs } from "./eggs.js";
     }
     drawDino();
 
-    var score = 0;
-    export function se() {return score;}
-    export { score, se };
+    let score = 0;
+    
     
     document.getElementById("score").innerHTML = "Score: " + score;
 
@@ -200,12 +200,14 @@ import { updateeggcoords, eggs } from "./eggs.js";
     );
 
 //starts off this so there is no blank div
-      document.getElementById("eggcoords").innerHTML = 
+function seteggcoordhtml() {
+        document.getElementById("eggcoords").innerHTML = 
         "Egg 1 coordinates: (" + eggs[0].x + ", " + eggs[0].y + ")"
         + '<br />' + "Egg 2 coordinates: (" + eggs[1].x + ", " + eggs[1].y + ")"
         + '<br />' + "Egg 3 coordinates: (" + eggs[2].x + ", " + eggs[2].y + ")"
       ;
-    
+}
+seteggcoordhtml();
     
     function makeEggBase(index) {
       const egg = new Image();
@@ -270,14 +272,30 @@ import { updateeggcoords, eggs } from "./eggs.js";
         console.log("===============================");
 
         //updates the coords one last time
-        document.getElementById("eggcoords").innerHTML = 
-      "Egg 1 coordinates: (" + eggs[0].x + ", " + eggs[0].y + ")"
-        + '<br />' + "Egg 2 coordinates: (" + eggs[1].x + ", " + eggs[1].y + ")"
-        + '<br />' + "Egg 3 coordinates: (" + eggs[2].x + ", " + eggs[2].y + ")"
-      ;
+        seteggcoordhtml();
+        gameend();
       }
     }
     var cringe = setInterval(eggcheckint, 10);
+  //fix logic here with the bug fix and the below end game screen
+  function gameend() {
+      gameover();
+    for (let i = 0; i <= 2; i += 1) {
+      clearInterval(eggint[i]);
+    }
+        eggs.forEach((eggs) => {
+          eggs["x"] = -69;
+          eggs["y"] = -69;
+        });
+     seteggcoordhtml();
+    //display official score at the center of the canvas
+      
+  }
+   setTimeout(gameend, 5000000);
+  
+  
+  
+  
   }
 
   //initialize function after html is completely loade
