@@ -28,15 +28,32 @@
   </div>
 
   <div class="sidestats">
-    <span id="eggcoords">
-      test
+    <span>
+      Hover over each section below to get information on what it outputs!
+    </span><br><br>
+    <abbr title="The coordinates of the three eggs will be listed here and will be changed accordingly when the js upates them. Note that the default position of all eggs is (-69, -69). This means all three eggs will start at (-69, -69), and when collected will be reset back to the default coordinates of (-69, -69).">
+      <span id="eggcoords">
+      Egg 1 coordinates: <br> (-69, -69)
+      <br>
+      Egg 2 coordinates: <br> (-69, -69)
+      <br>
+      Egg 3 coordinates: <br> (-69, -69)
     </span>
-    <span id="mouseclickcoords">
-      test
+    </abbr>
+    <br>
+    <abbr title="The coordinates of any mouse click on the *second* canvas will be shown here. The default this time will be (0, 0), though the initial html will set it to (-69, -69). The second canvas is the one where the sprites exist. Clicking on any other canvas will not update this display.">
+      <span id="mouseclickcoords">
+      x: -69
+      <br>
+      y: -69
     </span>
-    <span id="score">
-      test
+    </abbr>
+    <br>
+    <abbr title="This display shows the current score the player has acheived. It also defaults to 0, although the html initially will set it to -69 as per usual. The maximum score is 100. You will have 10 seconds to reach this score, and the game ends either when you reach 100 points in score, or you run out of time.">
+      <span id="score">
+      Score: -69
     </span>
+    </abbr>
   </div>
   <script type="module" src="background.js"></script>
  <script type="module" src="topsprite.js"></script>

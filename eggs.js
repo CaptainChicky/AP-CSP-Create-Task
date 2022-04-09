@@ -64,8 +64,8 @@ export function updateeggcoords(eggnum) {
   console.log("===============================");
 
     document.getElementById("eggcoords").innerHTML = 
-      "Egg 1 coordinates: (" + eggs[0].x + ", " + eggs[0].y + ")"
-        + '<br />' + "Egg 2 coordinates: (" + eggs[1].x + ", " + eggs[1].y + ")"
-        + '<br />' + "Egg 3 coordinates: (" + eggs[2].x + ", " + eggs[2].y + ")"
+      "Egg 1 coordinates:" + '<br />' + "(" + eggs[0].x + ", " + eggs[0].y + ")"
+        + '<br />' + "Egg 2 coordinates:" + '<br />' + "(" + eggs[1].x + ", " + eggs[1].y + ")"
+        + '<br />' + "Egg 3 coordinates:" + '<br />' + "(" + eggs[2].x + ", " + eggs[2].y + ")"
       ;
 }
