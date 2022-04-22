@@ -1,64 +1,63 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Create Task</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      .center {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Cringe CT</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <style>
-    .center {
-      margin: auto;
-      width: 60%;
-      padding: 10px;
-    }
-  </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <body>
+    <div class="center" style="position: center;">
+      <canvas id="GaymeCanvaz" width="800" height="600"
+        style="position: absolute; z-index: 0; background-color: transparent;"></canvas>
+      <canvas id="cv2" width="800" height="600"
+        style="position: absolute; z-index: 1; background-color: transparent;"></canvas>
+      <canvas id="go" width="800" height="600"
+        style="position: absolute; z-index: -1; background-color: transparent;"></canvas>
+    </div>
 
-
-  
-</head>
-
-<body>
-
-  <div class="center" style="position: center;">
-    <canvas id="GaymeCanvaz" width="800" height="600" style="position: absolute; z-index: 0; background-color: transparent;"></canvas>
-    <canvas id="cv2" width="800" height="600" style="position: absolute; z-index: 1; background-color: transparent;"></canvas>
-    <canvas id="go" width="800" height="600" style="position: absolute; z-index: -1; background-color: transparent;"></canvas>
-  </div>
-
-  <div class="sidestats">
-    <span>
-      Hover over each section below to get information on what it outputs!
-    </span><br><br>
-    <abbr title="The coordinates of the three eggs will be listed here and will be changed accordingly when the js upates them. Note that the default position of all eggs is (-69, -69). This means all three eggs will start at (-69, -69), and when collected will be reset back to the default coordinates of (-69, -69).">
-      <span id="eggcoords">
-      Egg 1 coordinates: <br> (-69, -69)
+    <div class="sidestats">
+      <span>
+        Hover over each section below to get information on what it outputs!
+      </span><br><br>
+      <abbr
+      title="The coordinates of the three eggs will be listed here and will be changed accordingly when the js updates them. Note that the default position of all eggs is (-69, -69). This means all three eggs will start at (-69, -69), and when collected will be reset back to the default coordinates of (-69, -69).">
+        <span id="eggcoords">
+          Egg 1 coordinates: <br> (-69, -69)
+          <br>
+          Egg 2 coordinates: <br> (-69, -69)
+          <br>
+          Egg 3 coordinates: <br> (-69, -69)
+        </span>
+      </abbr>
       <br>
-      Egg 2 coordinates: <br> (-69, -69)
+      <abbr
+      title="The coordinates of any mouse click on the *second* canvas will be shown here. The default this time will be (0, 0), though the initial html will set it to (-69, -69). The second canvas is the one where the sprites exist. Clicking on any other canvas will not update this display.">
+        <span id="mouseclickcoords">
+          x: -69
+          <br>
+          y: -69
+        </span>
+      </abbr>
       <br>
-      Egg 3 coordinates: <br> (-69, -69)
-    </span>
-    </abbr>
-    <br>
-    <abbr title="The coordinates of any mouse click on the *second* canvas will be shown here. The default this time will be (0, 0), though the initial html will set it to (-69, -69). The second canvas is the one where the sprites exist. Clicking on any other canvas will not update this display.">
-      <span id="mouseclickcoords">
-      x: -69
-      <br>
-      y: -69
-    </span>
-    </abbr>
-    <br>
-    <abbr title="This display shows the current score the player has acheived. It also defaults to 0, although the html initially will set it to -69 as per usual. The maximum score is 100. You will have 10 seconds to reach this score, and the game ends either when you reach 100 points in score, or you run out of time.">
-      <span id="score">
-      Score: -69
-    </span>
-    </abbr>
-  </div>
-  <script type="module" src="background.js"></script>
- <script type="module" src="topsprite.js"></script>
-<script type="module"  src="timer.js"></script>
-</body>
-
-
+      <abbr
+      title="This display shows the current score the player has achieved. It also defaults to 0, although the html initially will set it to -69 as per usual. The maximum score is 100. You will have 10 seconds to reach this score, and the game ends either when you reach 100 points in score, or you run out of time.">
+        <span id="score">
+          Score: -69
+        </span>
+      </abbr>
+    </div>
+    <script type="module" src="background.js"></script>
+    <script type="module" src="topsprite.js"></script>
+    <script type="module" src="timer.js"></script>
+  </body>
 </html>

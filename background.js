@@ -1,4 +1,5 @@
 import { createGrid } from "./grid.js";
+//import the grid function
 
 (function () {
   //basic lib vars on initialization of html

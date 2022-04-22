@@ -5,12 +5,12 @@ ctx = canvas.getContext("2d");
 
 //draws a grid
 export function createGrid() {
-  //draw a line every step pixels
-  const step = 50;
-
   //our end points
   const width = canvas.width;
   const height = canvas.height;
+
+  //draw a line every step pixels
+  const step = 50;
 
   //set our styles
   ctx.save();
